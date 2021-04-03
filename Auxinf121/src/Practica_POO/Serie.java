@@ -128,18 +128,18 @@ public class Serie {
         for(int j=0; j<getNroTemporadas(); j++){
             x = x + Integer.parseInt(Temporada[2][j]);
         }
-        System.out.println("Total de episodios: " +x);
+        System.out.println("Total de episodios de la serie "+getTitulo()+" : "+x);
     }
     
     public static void main(String[] args){
         Serie s1 = new Serie();
         Serie s2 = new Serie();
         
-        s2.leer();
-        s1.mostrar();
-        s2.mostrar();
-        s1.verificar(s2);
+//        s2.leer();
+//        s1.mostrar();
+//        s2.mostrar();
+//        s1.verificar(s2);
         s1.contar();
-        s2.contar();
+//        s2.contar();
     }
 }
