@@ -72,6 +72,15 @@ public class Serie {
     public void setTemporada(String[][] Temporada) {
         this.Temporada = Temporada;
     }
+    public String getTemporada(int i, int j){
+        return Temporada[i][j];
+    }
+    public void SetTemporada(String[][] Temporada){
+        this.Temporada = Temporada;
+    }
+    
+    
+    
     public void leer(){
         System.out.println("Titulo de la serie:");
         this.titulo = Leer.dato();
@@ -81,5 +90,56 @@ public class Serie {
         this.creador = Leer.dato();
         System.out.println("Numero de temporadas:");
         this.nroTemporadas = Leer.datoInt();
+        for (int j = 0; j<getNroTemporadas(); j++){
+            for(int i = 0; i<3;i++){
+                if(i == 0){
+                    System.out.println("Número de temporada: ");
+                }
+                if(i == 1){
+                    System.out.println("Titulo de la temporada: ");
+                }
+                if(i == 2){
+                    System.out.println("Cantidad de episodios: ");
+                }
+                Temporada[i][j] = Leer.dato();
+            }
+        }
+    }
+    public void mostrar(){
+        System.out.println("Serie : " + getTitulo());
+        System.out.println("Genero : " + getGenero());
+        System.out.println("Creador : " + getCreador());
+        System.out.println("Temporadas : " + getNroTemporadas());
+        System.out.println("Temp:Título:Nro de eps:");
+        for (int j = 0; j < getNroTemporadas(); j++) {
+            System.out.println(getTemporada(0,j) + " " + getTemporada(1,j) + " " + getTemporada(2,j));
+        }
+    }
+    public void verificar(Serie x){
+        if(getCreador().equals(x.getCreador())){
+            System.out.println("Si son del mismo creador: "+getCreador());
+        }
+        else{
+            System.out.println("No son del mismo creador");
+        }
+    }
+    public void contar(){
+        int x = 0;
+        for(int j=0; j<getNroTemporadas(); j++){
+            x = x + Integer.parseInt(Temporada[2][j]);
+        }
+        System.out.println("Total de episodios: " +x);
+    }
+    
+    public static void main(String[] args){
+        Serie s1 = new Serie();
+        Serie s2 = new Serie();
+        
+        s2.leer();
+        s1.mostrar();
+        s2.mostrar();
+        s1.verificar(s2);
+        s1.contar();
+        s2.contar();
     }
 }
