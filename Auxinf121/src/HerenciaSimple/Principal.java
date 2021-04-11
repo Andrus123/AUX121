@@ -11,4 +11,5 @@ package HerenciaSimple;
  */
 public class Principal {
     
+    
 }
