@@ -28,6 +28,7 @@ public class Sillon extends Mueble{
         capacidad = Leer.datoInt();
     }
     public void mostrar(){
+        super.mostrar();
         System.out.print("Capacidad: ");
         System.out.println(getCapacidad());
     }

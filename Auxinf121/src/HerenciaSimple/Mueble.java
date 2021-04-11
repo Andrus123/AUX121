@@ -33,5 +33,34 @@ public class Mueble {
         System.out.println("Color: " );
         color = Leer.dato();
     }
+    public void mostrar(){
+        System.out.println("Material: " + material);
+        System.out.println("Peso: " + peso);
+        System.out.println("Color: " + color);
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
     
 }
