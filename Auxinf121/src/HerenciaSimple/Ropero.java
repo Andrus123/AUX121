@@ -37,6 +37,4 @@ public class Ropero {
     public void setAlto(Double alto) {
         this.alto = alto;
     }
-    
-    
 }
