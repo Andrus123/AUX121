@@ -11,5 +11,8 @@ package HerenciaSimple;
  */
 public class Principal {
     
-    
+    public static void main(String[] args){
+        Sillon a = new Sillon("cuero",15,"cafe",3);
+        
+    }
 }

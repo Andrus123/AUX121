@@ -11,13 +11,15 @@ import clase1.Leer;
  *
  * @author andru
  */
-public class Sillon {
+public class Sillon extends Mueble{
     private int capacidad;
     Sillon(){
+        super();
         this.capacidad = 0;
     }
     
-    Sillon(int capacidad){
+    Sillon(String m, int p, String c,int capacidad){
+        super(m,p,c);
         this.capacidad = capacidad;
     }
     
