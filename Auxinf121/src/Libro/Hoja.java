@@ -20,6 +20,7 @@ public class Hoja {
     public void mostrar(){
         System.out.println("Nro de Paginas: "+getNropagina());
         System.out.println("Contenido: "+getContenido());
+        System.out.println();
     }
 
     public int getNropagina() {

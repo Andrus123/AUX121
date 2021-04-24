@@ -28,6 +28,7 @@ public class Libro {
         System.out.println("Nro hojas: "+getNh());
         for(int i=0;i<nh;i++){
             h[i] = new Hoja(i+1,"aaaaaaaaa");
+            h[i].mostrar();
         }
     }
     
