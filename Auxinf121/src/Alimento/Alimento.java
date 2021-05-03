@@ -85,6 +85,19 @@ public class Alimento {
     public void leer(){
         System.out.println("Ingrese el alimento:");
         setNombre(Leer.dato());
+        System.out.println("Ingrese el precio:");
+        setPrecio(Leer.datoInt());
+        System.out.println("N° de vitaminas:");
+        setNrov(Leer.datoInt());
+        System.out.println("Vitaminas:");
+        for(int i=0; i<getNrov();i++){
+            v[i] = Leer.dato();
+        }
+        System.out.println("N° de minerales:");
+        setNrom(Leer.datoInt());
+        for(int i=0; i<getNrom();i++){
+            m[i] = Leer.dato();
+        }
     }
     public void mostrar(){
         System.out.println("Nombre: "+getNombre());
