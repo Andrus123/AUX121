@@ -41,7 +41,7 @@ public class Triangulo extends Figura{
     }
     
     public void mostrar(){
-        System.out.println("Triangulo: ");
+        System.out.println("\nTriangulo: ");
         System.out.println("Base: "+b);
         System.out.println("Altura: "+a);
     }
