@@ -49,4 +49,22 @@ public class Verdura extends Alimento {
         super.mostrar();
         System.out.println("Tipo: "+getTipo());
     }
+    public void Verificarminerales(Verdura x){
+        for(int i=0;i<x.nrov;i++){
+            for(int j=0;j<this.nrov;j++){
+                if(v[i]==v[j]){
+                    System.out.println("Vitaminas similares: "+v[i]);
+                }
+            }
+        }
+    }
+    public void CompararPrecios(Carne x){
+        if(x.precio > this.precio){
+            System.out.println("\nEl alimento más barato: ");
+            this.mostrar();
+        }else{
+            System.out.println("\nEl alimento más barato: ");
+            x.mostrar();
+        }
+    }
 }

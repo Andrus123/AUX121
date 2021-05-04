@@ -72,5 +72,12 @@ public class Fruta extends Alimento{
         System.out.println("Tipo de fruta: "+getTipo());
         System.out.println("Azucares: "+getAzucares());
     }
+    public void insertarPrecioyNombre(){
+        System.out.println("Inserte nuevo nombre de fruta: ");
+        setNombre(Leer.dato());
+        System.out.println("Inserte nuevo precio: ");
+        setPrecio(Leer.datoInt());
+        this.mostrar();
+    }
 }
 

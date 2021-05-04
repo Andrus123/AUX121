@@ -100,7 +100,7 @@ public class Alimento {
         }
     }
     public void mostrar(){
-        System.out.println("Nombre: "+getNombre());
+        System.out.println("\nNombre: "+getNombre());
         System.out.println("Precio: "+getPrecio());
         System.out.println("N° de vitaminas: "+getNrov());
         System.out.println("Vitaminas: ");
