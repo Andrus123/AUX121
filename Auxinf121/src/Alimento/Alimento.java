@@ -10,12 +10,12 @@ package Alimento;
  * @author Andrés Aquin
  */
 public class Alimento {
-    private String nombre;
-    private int precio;
-    private int nrov;
-    private String[] v = new String[5];
-    private int nrom;
-    private String[] m = new String[5];
+    public String nombre;
+    public int precio;
+    public int nrov;
+    public String[] v = new String[5];
+    public int nrom;
+    public String[] m = new String[5];
     
     public Alimento(){
         this.nombre = "Manzana";

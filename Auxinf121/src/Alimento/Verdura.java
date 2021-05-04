@@ -10,10 +10,17 @@ package Alimento;
  * @author Andrés Aquin
  */
 public class Verdura extends Alimento {
-    private String tipo;
+    public String tipo;
     
     public Verdura(){
         super();
+        this.nombre = "Lechuga";
+        this.precio = 3;
+        this.nrov = 2;
+        v[0]="D";
+        v[1]="F";
+        this.nrom = 1;
+        m[0]="Calcio";
         this.tipo = "Hojas";
     }
 
