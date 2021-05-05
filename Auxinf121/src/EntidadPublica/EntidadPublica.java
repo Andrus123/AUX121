@@ -72,12 +72,29 @@ public class EntidadPublica {
         this.funcionarios = funcionarios;
     }
     public void mostrar(){
-        System.out.println("Nombre: "+getNombre());
+        System.out.println("\nNombre: "+getNombre());
         System.out.println("Direccion: "+getDireccion());
         System.out.println("Presupuesto: "+getPresupuesto());
         System.out.println("N° de funcionarios: "+getNrofuncionarios());
         for(int i=0; i<this.nrofuncionarios;i++){
             System.out.println(funcionarios[i]);
         }
+    }
+    
+    public void MismoPersonal(EntidadPublica x, EntidadPublica y){
+        for(int i=0; i<x.nrofuncionarios;i++){
+            for(int j=0; j<y.nrofuncionarios;j++){
+                if(x.funcionarios[i]==y.funcionarios[j]){
+                    System.out.println("\nPersonal en dos Entidades Publicas: "
+                            +x.funcionarios[i]);
+                }
+            }
+        }
+    }
+    
+    public void CambiarDireccion(){
+        System.out.println("\nIngrese nueva dirección");
+        setDireccion(Leer.dato());
+        this.mostrar();
     }
 }
