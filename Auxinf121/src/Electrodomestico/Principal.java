@@ -23,6 +23,9 @@ public class Principal {
         r2.mostrar();
         //b) verificar si los refrigeradors son del mismo modelo
         e.Verificarmodelo(l1, l2);
-        
+        //c) verificar lavadora y refrigerador si tienen la misma marca
+        e.Verificandomarca(l1, r1);
+        //d) mostrar la lavadora con mayor capacidad
+        l1.maxcapacidad(l1, l2);
     }
 }

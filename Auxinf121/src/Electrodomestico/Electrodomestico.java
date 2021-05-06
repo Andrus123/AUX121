@@ -62,4 +62,12 @@ public class Electrodomestico {
             System.out.println("Modelos distintos: "+x.modelo+" - "+y.modelo);
         }
     }
+    public void Verificandomarca(Electrodomestico x, Electrodomestico y){
+        System.out.println("\nVerificando similitud de marcas...");
+        if(x.marca==y.marca){
+            System.out.println("Marca igual: "+x.marca);
+        }else{
+            System.out.println("Marcas distintas: "+x.marca+" - "+y.marca);
+        }
+    }
 }

@@ -37,8 +37,13 @@ public class Lavadora extends Electrodomestico{
         super.mostrar();
         System.out.println("Kilogramos: "+getKg());
     }
-    public void Verificarmodelo(Lavadora x, Lavadora y){
-        System.out.println("Verificando el modelo de Lavadoras:");
-        super.Verificarmodelo(x, y);
+    public void maxcapacidad(Lavadora x, Lavadora y){
+        if(x.getKg()>y.getKg()){
+            System.out.println("\nLavadora con más capacidad: "+x.marca+" - "+x.modelo);
+            System.out.println("Capacidad: "+x.getKg());
+        }else{
+            System.out.println("\nLavadora con más capacidad: "+y.marca+" - "+y.modelo);
+            System.out.println("Capacidad: "+y.getKg()+" kg.");
+        }
     }
 }
