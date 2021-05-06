@@ -10,13 +10,14 @@ package EntidadPublica;
  * @author Andrés Aquin
  */
 public class EntidadPublica {
+
     public String nombre;
     public String direccion;
     public int presupuesto;
     public int nrofuncionarios;
     public String[] funcionarios = new String[50];
-    
-    public EntidadPublica(){
+
+    public EntidadPublica() {
         this.nombre = "";
         this.direccion = "";
         this.presupuesto = 100000;
@@ -71,30 +72,51 @@ public class EntidadPublica {
     public void setFuncionarios(String[] funcionarios) {
         this.funcionarios = funcionarios;
     }
-    public void mostrar(){
-        System.out.println("\nNombre: "+getNombre());
-        System.out.println("Direccion: "+getDireccion());
-        System.out.println("Presupuesto: "+getPresupuesto());
-        System.out.println("N° de funcionarios: "+getNrofuncionarios());
-        for(int i=0; i<this.nrofuncionarios;i++){
+
+    public void mostrar() {
+        System.out.println("\nNombre: " + getNombre());
+        System.out.println("Direccion: " + getDireccion());
+        System.out.println("Presupuesto: " + getPresupuesto());
+        System.out.println("N° de funcionarios: " + getNrofuncionarios());
+        for (int i = 0; i < this.nrofuncionarios; i++) {
             System.out.println(funcionarios[i]);
         }
     }
-    
-    public void MismoPersonal(EntidadPublica x, EntidadPublica y){
-        for(int i=0; i<x.nrofuncionarios;i++){
-            for(int j=0; j<y.nrofuncionarios;j++){
-                if(x.funcionarios[i]==y.funcionarios[j]){
+
+    public void MismoPersonal(EntidadPublica x, EntidadPublica y) {
+        for (int i = 0; i < x.nrofuncionarios; i++) {
+            for (int j = 0; j < y.nrofuncionarios; j++) {
+                if (x.funcionarios[i] == y.funcionarios[j]) {
                     System.out.println("\nPersonal en dos Entidades Publicas: "
-                            +x.funcionarios[i]);
+                            + x.funcionarios[i]);
                 }
             }
         }
     }
-    
-    public void CambiarDireccion(){
+
+    public void CambiarDireccion() {
         System.out.println("\nIngrese nueva dirección");
         setDireccion(Leer.dato());
         this.mostrar();
+    }
+
+    public void CompararPresupuestos(EntidadPublica[] ent, EntidadPublica x, EntidadPublica y, EntidadPublica z) {
+        ent[0] = x;
+        ent[1] = y;
+        ent[2] = z;
+        EntidadPublica aux = new EntidadPublica();
+        for (int i = 0; i < 3; i++) {
+            for (int j = i+1; j <3;j++) {
+                if (ent[i].presupuesto < ent[j].presupuesto) {
+                    aux = ent[i];
+                    ent[i] = ent[j];
+                    ent[j] = aux;
+                }
+            }
+        }
+        System.out.println("\nPresupuestos de Entidades Publicas: ");
+        for (int i = 0; i < 3; i++) {
+            System.out.println(ent[i].nombre + " Presupuesto: " + ent[i].presupuesto);
+        }
     }
 }

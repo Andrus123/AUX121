@@ -25,7 +25,8 @@ public class Principal {
         //c) Cambiar de direccion de la defensoría del pueblo
         d1.CambiarDireccion();
         //d) Comparar presupuestos de las entidades publicas
-        
+        EntidadPublica[] ent = new EntidadPublica[3];
+        e1.CompararPresupuestos(ent, c1, d1, m1);
     }
 }
 
