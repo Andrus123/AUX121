@@ -27,6 +27,8 @@ public class Principal {
         //d) Comparar presupuestos de las entidades publicas
         EntidadPublica[] ent = new EntidadPublica[3];
         e1.CompararPresupuestos(ent, c1, d1, m1);
+        //e)Llevar a los funcionarios de nombre X del ministerio a la contraloria
+        e1.CambioPersonal(m1, c1);
     }
 }
 

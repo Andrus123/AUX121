@@ -119,4 +119,20 @@ public class EntidadPublica {
             System.out.println(ent[i].nombre + " Presupuesto: " + ent[i].presupuesto);
         }
     }
+    public void CambioPersonal(EntidadPublica x, EntidadPublica y){
+        System.out.println("Ingrese el empleado: ");
+        String per = Leer.dato();
+        for(int i=0; i<x.nrofuncionarios; i++){
+            if(x.funcionarios[i].equals(per)){
+                String aux = x.funcionarios[i];
+                x.funcionarios[i] = x.funcionarios[i+1];
+                x.funcionarios[i+1] = aux;
+            }
+        }
+        x.nrofuncionarios--;
+        y.nrofuncionarios++;
+        y.funcionarios[y.nrofuncionarios-1] = per;
+        x.mostrar();
+        y.mostrar();
+    }
 }
