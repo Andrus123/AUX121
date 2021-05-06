@@ -14,6 +14,9 @@ public class Refrigerador extends Electrodomestico {
     
     public Refrigerador(){
         super();
+        this.marca = "Samsung";
+        this.modelo = "French Door";
+        this.precio = 7800.60;
         this.nroCuerpos = 4;
     }
 
@@ -29,5 +32,9 @@ public class Refrigerador extends Electrodomestico {
     public void setNroCuerpos(int nroCuerpos) {
         this.nroCuerpos = nroCuerpos;
     }
-    
+    public void mostrar(){
+        System.out.println("\nRefrigerador: ");
+        super.mostrar();
+        System.out.println("N° de cuerpos: "+getNroCuerpos());
+    }
 }

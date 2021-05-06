@@ -14,6 +14,9 @@ public class Lavadora extends Electrodomestico{
     
     public Lavadora(){
         super();
+        this.marca = "LG";
+        this.modelo = "Washtower";
+        this.precio = 5800.50;
         this.kg = 500.5;
     }
 
@@ -29,5 +32,13 @@ public class Lavadora extends Electrodomestico{
     public void setKg(Double kg) {
         this.kg = kg;
     }
-    
+    public void mostrar(){
+        System.out.println("\nLavadora: ");
+        super.mostrar();
+        System.out.println("Kilogramos: "+getKg());
+    }
+    public void Verificarmodelo(Lavadora x, Lavadora y){
+        System.out.println("Verificando el modelo de Lavadoras:");
+        super.Verificarmodelo(x, y);
+    }
 }

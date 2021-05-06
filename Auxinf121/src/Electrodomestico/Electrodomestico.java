@@ -49,5 +49,17 @@ public class Electrodomestico {
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
-    
+    public void mostrar(){
+        System.out.println("Marca: "+getMarca());
+        System.out.println("Modelo: "+getModelo());
+        System.out.println("Precio: "+getPrecio());
+    }
+    public void Verificarmodelo(Electrodomestico x, Electrodomestico y){
+        System.out.println("\nVerificando similitud de modelos...");
+        if(x.modelo==y.modelo){
+            System.out.println("modelo igual: "+x.modelo);
+        }else{
+            System.out.println("Modelos distintos: "+x.modelo+" - "+y.modelo);
+        }
+    }
 }
