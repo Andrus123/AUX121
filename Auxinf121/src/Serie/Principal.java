@@ -16,7 +16,10 @@ public class Principal {
         Serie s2 = new Serie();
         s2.leer();
         s1.mostrar();
-        s1.mostrar();
+        s2.mostrar();
+        //b) Contar cuantos episodios tiene una serie
+        s1.contarEpisodios();
+        s2.contarEpisodios();
         
     }
 }

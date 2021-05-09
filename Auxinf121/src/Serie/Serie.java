@@ -93,4 +93,11 @@ public class Serie {
             temporada[i].mostrar();
         }
     }
+    public void contarEpisodios(){
+        int contador =0;
+        for (int i = 0; i < this.getNrotemporadas(); i++) {
+            contador = contador + temporada[i].getNroepisodios();
+        }
+        System.out.println("Total de episodios: "+ contador);
+    }
 }
