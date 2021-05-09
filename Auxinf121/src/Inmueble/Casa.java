@@ -51,6 +51,7 @@ public class Casa extends Inmueble{
     public void setNropuerta(int nropuerta) {
         this.nropuerta = nropuerta;
     }
+    @Override
     public void mostrar(){
         super.mostrar();
         System.out.println("Codigo de Casa: "+getCodCasa());

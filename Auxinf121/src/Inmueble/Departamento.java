@@ -51,6 +51,7 @@ public class Departamento extends Inmueble{
     public void setNomencargado(String nomencargado) {
         this.nomencargado = nomencargado;
     }
+    @Override
     public void mostrar(){
         super.mostrar();
         System.out.println("Codigo del Departamento: "+getCodDep());
