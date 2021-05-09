@@ -100,4 +100,13 @@ public class Serie {
         }
         System.out.println("Total de episodios: "+ contador);
     }
+    public void mostrarepisodio(){
+        System.out.println("Ingrese el N°episodio: ");
+        int n = Leer.datoInt();
+        for (int i = 0; i < getNrotemporadas(); i++) {
+            if(n==temporada[i].episodio[i].getNroEpisodio()){
+                System.out.println("Ep: "+temporada[i].episodio[i].getTitulo());
+            }
+        }
+    }
 }

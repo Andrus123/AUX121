@@ -20,6 +20,9 @@ public class Principal {
         //b) Contar cuantos episodios tiene una serie
         s1.contarEpisodios();
         s2.contarEpisodios();
-        
+        //c) Mostrar el titulo del episodio X de la serie Y
+        s1.mostrarepisodio();
+        s2.mostrarepisodio();
+        //d)
     }
 }
