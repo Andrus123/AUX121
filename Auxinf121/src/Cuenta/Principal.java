@@ -18,5 +18,11 @@ public class Principal {
         c1.mostrar();
         c2.mostrar();
         //b) Crear una funcion para obtener el correo de la cuenta
+        c1.correo();
+        c2.correo();
+        //c) Intercambiar el numero de celular entre ambas cuentas
+        c1.celular(c1, c2);
+        c1.mostrar();
+        c2.mostrar();
     }
 }

@@ -16,7 +16,7 @@ public class Cuenta {
     
     public Cuenta(){
         us = new Usuario();
-        this.extensionCorreo = "gmail.com";
+        this.extensionCorreo = "@gmail.com";
         this.fechadecreacion = 8052021;
     }
 
@@ -39,7 +39,7 @@ public class Cuenta {
     }
 
     public void setExtensionCorreo(String extensionCorreo) {
-        this.extensionCorreo = extensionCorreo;
+        this.extensionCorreo = "@"+extensionCorreo;
     }
 
     public int getFechadecreacion() {
@@ -51,15 +51,25 @@ public class Cuenta {
     }
     public void leer(){
         us.leer();
-        System.out.println("extension de correo: ");
+        System.out.println("Extension de correo: ");
         setExtensionCorreo(Leer.dato());
         System.out.println("Fecha de creación: ");
         setFechadecreacion(Leer.datoInt());
     }
     public void mostrar(){
-        System.out.println("Usuario creado exitosamente: ");
+        System.out.println("\nUsuario creado exitosamente: ");
         us.mostrar();
-        System.out.println("@: "+getExtensionCorreo());
+        System.out.println("Extension: "+getExtensionCorreo());
         System.out.println("Fecha de creación: "+getFechadecreacion());
+    }
+    public void correo(){
+        System.out.println("\nCorreo: "+us.nombre.toLowerCase()
+                +us.apellido.toLowerCase()+us.edad+getExtensionCorreo());
+    }
+    public void celular(Cuenta x, Cuenta y){
+        System.out.println("\nIntercambio de numeros entre usuarios: ");
+        int aux = x.us.getNrodecelular();
+        x.us.setNrodecelular(y.us.getNrodecelular());
+        y.us.setNrodecelular(aux);
     }
 }
