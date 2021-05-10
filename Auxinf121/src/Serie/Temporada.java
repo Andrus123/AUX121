@@ -10,62 +10,62 @@ package Serie;
  * @author Andrés Aquin
  */
 public class Temporada {
-    private int nrotemporada;
-    private int nroepisodios;
-    private Episodio[] episodio;
+    public int nroTemporada;
+    public int nroEpisodios;
+    Episodio[] ep;
     
     public Temporada(){
-        this.nrotemporada = 5;
-        this.nroepisodios = 12;
-        episodio= new Episodio[nroepisodios + 1]; //Creando el array
-        for(int i=0; i<this.nroepisodios;i++){
-            episodio[i] = new Episodio();
+        this.nroTemporada = 5;
+        this.nroEpisodios = 12;
+        for (int i = 0; i < this.nroEpisodios; i++) {
+            ep[i] = new Episodio();
         }
     }
 
-    public Temporada(int nrotemporada, int nroepisodios) {
-        this.nrotemporada = nrotemporada;
-        this.nroepisodios = nroepisodios;
+    public Temporada(int nroTemporada, int nroEpisodios, Episodio[] ep) {
+        this.nroTemporada = nroTemporada;
+        this.nroEpisodios = nroEpisodios;
+        this.ep = ep;
     }
 
-    public int getNrotemporada() {
-        return nrotemporada;
+    public int getNroTemporada() {
+        return nroTemporada;
     }
 
-    public void setNrotemporada(int nrotemporada) {
-        this.nrotemporada = nrotemporada;
+    public void setNroTemporada(int nroTemporada) {
+        this.nroTemporada = nroTemporada;
     }
 
-    public int getNroepisodios() {
-        return nroepisodios;
+    public int getNroEpisodios() {
+        return nroEpisodios;
     }
 
-    public void setNroepisodios(int nroepisodios) {
-        this.nroepisodios = nroepisodios;
+    public void setNroEpisodios(int nroEpisodios) {
+        this.nroEpisodios = nroEpisodios;
     }
 
-    public Episodio[] getEpisodio() {
-        return episodio;
+    public Episodio[] getEp() {
+        return ep;
     }
 
-    public void setEpisodio(Episodio[] episodio) {
-        this.episodio = episodio;
+    public void setEp(Episodio[] ep) {
+        this.ep = ep;
     }
     
     public void leer(){
-        System.out.println("N° de temporada; ");
-        setNrotemporada(Leer.datoInt());
-        System.out.println("N° de episodios; ");
-        setNroepisodios(Leer.datoInt());
-        for(int i=0; i<getNroepisodios();i++){
-            episodio[i].leer();
+        System.out.println("N° de temporada: ");
+        setNroTemporada(Leer.datoInt());
+        System.out.println("N° de episodios: ");
+        setNroEpisodios(Leer.datoInt());
+        for (int i = 0; i < getNroEpisodios(); i++) {
+            this.ep[i].leer();
         }
     }
     public void mostrar(){
-        System.out.println("N° de temporada: "+getNrotemporada());
-        System.out.println("N° de episodios: "+getNroepisodios());
-        for(int i=0; i<getNroepisodios();i++){
-            episodio[i].mostrar();
+        System.out.println("N° de temporada: "+getNroTemporada());
+        System.out.println("Cantidad de episodios: "+getNroEpisodios());
+        for (int i = 0; i < getNroEpisodios(); i++) {
+            this.ep[i].mostrar();
         }
     }
 }

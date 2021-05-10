@@ -10,16 +10,16 @@ package Serie;
  * @author Andrés Aquin
  */
 public class Episodio {
-    private int nroEpisodio;
-    private String titulo;
-    private double duracion;
+    public int nroEpisodio;
+    public String titulo;
+    public double duracion;
     
     public Episodio(){
-        this.nroEpisodio = 7;
+        this.nroEpisodio = 3;
         this.titulo = "Ozymandias";
-        this.duracion = 1.10;
+        this.duracion = 1.2;
     }
-
+    
     public Episodio(int nroEpisodio, String titulo, double duracion) {
         this.nroEpisodio = nroEpisodio;
         this.titulo = titulo;
