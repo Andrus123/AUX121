@@ -16,6 +16,8 @@ public class Edificio extends Inmueble{
     
     public Edificio(){
         super();
+        this.costo = 580000.50;
+        this.tamaño = 1500.80;
         this.codEd = "TF1234";
         this.nrodepartamentos = 9;
         this.Nombreencargado = "Juan Perez";
@@ -64,9 +66,9 @@ public class Edificio extends Inmueble{
     
     @Override
     public void mostrar(){
-        super.mostrar();
         System.out.println("Codigo Edificio: "+getCodEd());
         System.out.println("N° de departamentos: "+getNrodepartamentos());
         System.out.println("Encargado: "+getNombreencargado());
+         super.mostrar();
     }
 }

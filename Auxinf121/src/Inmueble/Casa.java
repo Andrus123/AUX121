@@ -16,6 +16,8 @@ public class Casa extends Inmueble{
     
     public Casa(){
         super();
+        this.costo = 10700.50;
+        this.tamaño = 850.50;
         this.codCas = "HOME123";
         this.nrohabitaciones = 7;
         this.nropuerta = 40;
@@ -63,9 +65,9 @@ public class Casa extends Inmueble{
     
     @Override
     public void mostrar(){
-        super.mostrar();
         System.out.println("Codigo Casa: "+getCodCas());
         System.out.println("N° de habitaciones: "+getNrohabitaciones());
         System.out.println("N° de puerta: "+getNropuerta());
+         super.mostrar();
     }
 }

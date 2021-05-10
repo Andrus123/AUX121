@@ -27,5 +27,7 @@ public class Principal {
         condo1.mostrar();
         //b) Mostrar todos los Edificios del condominio que al menos tenga 5 dep
         condo1.cuentadep();
+        //c) Mostrar en cuanto esta valuado el condominio segun el costo de los inmuebles
+        condo1.costocondo();
     }
 }

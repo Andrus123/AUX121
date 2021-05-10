@@ -22,10 +22,12 @@ public class Condominio extends Inmueble{
         this.ncasas = 3;
         for (int i = 0; i < this.ncasas; i++) {
             codCasas[i] = new Casa();
+            this.costo = costo + codCasas[i].getCosto();
         }
         this.nedif = 2;
         for(int i = 0; i < this.nedif; i++){
             codEdificios[i] = new Edificio();
+            this.costo = costo + codEdificios[i].getCosto();
         }
     }
 
@@ -90,7 +92,6 @@ public class Condominio extends Inmueble{
         for (int i = 0; i < getNedif(); i++) {
             codEdificios[i].leer();
         }
-        super.leer();
     }
 
     @Override
@@ -104,15 +105,28 @@ public class Condominio extends Inmueble{
         for (int i = 0; i < this.nedif; i++) {
             codEdificios[i].mostrar();
         }
-        super.mostrar();
+        System.out.println("Costo del Condominio: "+this.costo);
     }
     public void cuentadep(){
-        System.out.println("Edificios con al menos 5 departamentos: ");
+        System.out.println("\nEdificios con al menos 5 departamentos: ");
         for (int i = 0; i < getNedif(); i++) {
             if(codEdificios[i].getNrodepartamentos()>=5){
                 System.out.println("Edificio: "+codEdificios[i].getCodEd()+
                     " con "+codEdificios[i].getNrodepartamentos()+" depts");
             }
         }
+    }
+    public void costocondo(){
+        System.out.println("\nCosto del Condominio: ");
+        double totalcasas = 0.0;
+        for (int i = 0; i < getNcasas(); i++) {
+            totalcasas = totalcasas +codCasas[i].getCosto();
+        }
+        double totaledif = 0.0;
+        for (int i=0; i< getNedif(); i++){
+            totaledif = totaledif + codEdificios[i].getCosto();
+        }
+        double total = totalcasas + totaledif;
+        System.out.println(total+" $us");
     }
 }

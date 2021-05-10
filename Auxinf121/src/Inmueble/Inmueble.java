@@ -45,7 +45,7 @@ public class Inmueble {
         setTamaño(Leer.datoDouble());
     }
     public void mostrar(){
-        System.out.println("Costo: "+getCosto());
+        System.out.println("Costo: "+getCosto()+" $us");
         System.out.println("Tamaño: "+getTamaño());
     }
 }
