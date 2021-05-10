@@ -58,6 +58,11 @@ public class Serie {
         }
         System.out.println(total+" episodios");
     }
+    public void buscarEp(int x){
+        for (int i = 1; i <= getNroTemporadas(); i++) {
+            temp[i].buscarEp(x);
+        }
+    }
     
      public String getNombre() {
         return nombre;

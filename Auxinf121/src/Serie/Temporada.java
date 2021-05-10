@@ -22,22 +22,6 @@ public class Temporada {
             eps[i] = new Episodio();
         }
     }
-
-    public int getNroTemporada() {
-        return nroTemporada;
-    }
-
-    public void setNroTemporada(int nroTemporada) {
-        this.nroTemporada = nroTemporada;
-    }
-
-    public int getNroEpisodios() {
-        return nroEpisodios;
-    }
-
-    public void setNroEpisodios(int nroEpisodios) {
-        this.nroEpisodios = nroEpisodios;
-    }
     
     public void leer(){
         System.out.println("N° de temporada: ");
@@ -54,6 +38,30 @@ public class Temporada {
         for (int i = 1; i <= getNroEpisodios(); i++) {
             eps[i].mostrar();
         }
+    }
+    public void buscarEp(int x){
+        for (int i = 1; i <= getNroEpisodios(); i++) {
+            if(x==eps[i].getNroEpisodio()){
+                System.out.println("\nEpisodio #"+
+                        eps[i].getNroEpisodio()+" - '"+eps[i].getTitulo()+"'");
+            }
+        }
+    }
+
+    public int getNroTemporada() {
+        return nroTemporada;
+    }
+
+    public void setNroTemporada(int nroTemporada) {
+        this.nroTemporada = nroTemporada;
+    }
+
+    public int getNroEpisodios() {
+        return nroEpisodios;
+    }
+
+    public void setNroEpisodios(int nroEpisodios) {
+        this.nroEpisodios = nroEpisodios;
     }
     public int getNroep(int a){
         return eps[a].getNroEpisodio();

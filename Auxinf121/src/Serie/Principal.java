@@ -19,5 +19,9 @@ public class Principal {
         //s2.mostrar();
         //b) Contar cuantos episodios tiene en total una serie
         s1.cantidadEpSerie();
+        //c) Mostrar el titulo del episodio X de la serie Y
+        s1.buscarEp(3);
+        //d) Mostrar la serie con más temporadas
+        
     }
 }
