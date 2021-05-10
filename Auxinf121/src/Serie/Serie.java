@@ -14,15 +14,15 @@ public class Serie {
     private String genero;
     private String creador;
     private int nroTemporadas;
-    Temporada[] temp;
+    private Temporada[] temp = new Temporada[14];
     
     public Serie(){
         this.nombre = "Breaking Bad";
         this.genero = "Drama";
         this.creador = "Vince Gilligan";
-        this.nroTemporadas = 5;
+        this.nroTemporadas = 1;
         for (int i = 0; i < this.nroTemporadas; i++) {
-            temp[i] = new Temporada();
+            this.temp[i] = new Temporada();
         }
     }
 

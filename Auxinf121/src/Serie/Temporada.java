@@ -12,13 +12,13 @@ package Serie;
 public class Temporada {
     public int nroTemporada;
     public int nroEpisodios;
-    Episodio[] ep;
+    public Episodio[] ep = new Episodio[12];
     
     public Temporada(){
         this.nroTemporada = 5;
         this.nroEpisodios = 12;
         for (int i = 0; i < this.nroEpisodios; i++) {
-            ep[i] = new Episodio();
+            this.ep[i] = new Episodio();
         }
     }
 
@@ -68,5 +68,4 @@ public class Temporada {
             this.ep[i].mostrar();
         }
     }
-    
 }
