@@ -26,6 +26,6 @@ public class Principal {
         edf3.mostrar();
         condo1.mostrar();
         //b) Mostrar todos los Edificios del condominio que al menos tenga 5 dep
-        
+        condo1.cuentadep();
     }
 }

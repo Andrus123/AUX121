@@ -105,5 +105,14 @@ public class Condominio extends Inmueble{
             codEdificios[i].mostrar();
         }
         super.mostrar();
-    } 
+    }
+    public void cuentadep(){
+        System.out.println("Edificios con al menos 5 departamentos: ");
+        for (int i = 0; i < getNedif(); i++) {
+            if(codEdificios[i].getNrodepartamentos()>=5){
+                System.out.println("Edificio: "+codEdificios[i].getCodEd()+
+                    " con "+codEdificios[i].getNrodepartamentos()+" depts");
+            }
+        }
+    }
 }
