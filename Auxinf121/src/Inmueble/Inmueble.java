@@ -10,36 +10,42 @@ package Inmueble;
  * @author Andrés Aquin
  */
 public class Inmueble {
-    private Double costo;
-    private Double tamaño;
+    protected double costo;
+    protected double tamaño; // en m2
     
     public Inmueble(){
-        this.costo = 750000.5;
-        this.tamaño = 500.8;
+        this.costo = 0;
+        this.tamaño = 0;
     }
 
-    public Inmueble(Double costo, Double tamaño) {
+    public Inmueble(double costo, double tamaño) {
         this.costo = costo;
         this.tamaño = tamaño;
     }
 
-    public Double getCosto() {
+    public double getCosto() {
         return costo;
     }
 
-    public void setCosto(Double costo) {
+    public void setCosto(double costo) {
         this.costo = costo;
     }
 
-    public Double getTamaño() {
+    public double getTamaño() {
         return tamaño;
     }
 
-    public void setTamaño(Double tamaño) {
+    public void setTamaño(double tamaño) {
         this.tamaño = tamaño;
+    }
+    public void leer(){
+        System.out.println("Costo del inmueble: ");
+        setCosto(Leer.datoDouble());
+        System.out.println("Tamaño del inmueble: ");
+        setTamaño(Leer.datoDouble());
     }
     public void mostrar(){
         System.out.println("Costo: "+getCosto());
-        System.out.println("Tamaño en m2: "+getTamaño());
+        System.out.println("Tamaño: "+getTamaño());
     }
 }

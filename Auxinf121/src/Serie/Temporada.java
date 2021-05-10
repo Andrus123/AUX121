@@ -12,11 +12,12 @@ package Serie;
 public class Temporada {
     private int nrotemporada;
     private int nroepisodios;
-    Episodio[] episodio = new Episodio[100];
+    private Episodio[] episodio;
     
     public Temporada(){
         this.nrotemporada = 5;
         this.nroepisodios = 12;
+        episodio= new Episodio[nroepisodios + 1]; //Creando el array
         for(int i=0; i<this.nroepisodios;i++){
             episodio[i] = new Episodio();
         }

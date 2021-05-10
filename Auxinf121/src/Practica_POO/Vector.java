@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package Practica_POO;
-
-import clase2.Leer;
-
 /**
  *
  * @author andru

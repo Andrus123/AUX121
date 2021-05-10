@@ -14,13 +14,14 @@ public class Serie {
     private String genero;
     private String creador;
     private int nrotemporadas;
-    Temporada[] temporada = new Temporada[50];
+    private Temporada[] temporada;
     
     public Serie(){
         this.nombre = "Breaking Bad";
         this.genero = "Drama";
         this.creador = "Vince Gilligan";
         this.nrotemporadas = 1;
+        temporada = new Temporada[nrotemporadas + 1];
         for(int i=0; i<this.nrotemporadas;i++){
             temporada[i] = new Temporada();
         }
@@ -81,7 +82,7 @@ public class Serie {
         setCreador(Leer.dato());
         System.out.println("N° de temporadas: ");
         setNrotemporadas(Leer.datoInt());
-        for(int i=0; i<getNrotemporadas();i++){
+        for(int i=0; i< getNrotemporadas();i++){
             temporada[i].leer();
         }
     }
@@ -103,10 +104,5 @@ public class Serie {
     public void mostrarepisodio(){
         System.out.println("Ingrese el N°episodio: ");
         int n = Leer.datoInt();
-        for (int i = 0; i < getNrotemporadas(); i++) {
-            if(n==temporada[i].episodio[i].getNroEpisodio()){
-                System.out.println("Ep: "+temporada[i].episodio[i].getTitulo());
-            }
-        }
     }
 }

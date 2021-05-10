@@ -10,30 +10,30 @@ package Inmueble;
  * @author Andrés Aquin
  */
 public class Casa extends Inmueble{
-    private String codCasa;
+    private String codCas;
     private int nrohabitaciones;
     private int nropuerta;
     
     public Casa(){
         super();
-        this.codCasa = "House#2123df";
+        this.codCas = "HOME123";
         this.nrohabitaciones = 7;
-        this.nropuerta = 473;
+        this.nropuerta = 40;
     }
 
-    public Casa(String codCasa, int nrohabitaciones, int nropuerta, Double costo, Double tamaño) {
+    public Casa(String codCas, int nrohabitaciones, int nropuerta, double costo, double tamaño) {
         super(costo, tamaño);
-        this.codCasa = codCasa;
+        this.codCas = codCas;
         this.nrohabitaciones = nrohabitaciones;
         this.nropuerta = nropuerta;
     }
 
-    public String getCodCasa() {
-        return codCasa;
+    public String getCodCas() {
+        return codCas;
     }
 
-    public void setCodCasa(String codCasa) {
-        this.codCasa = codCasa;
+    public void setCodCas(String codCas) {
+        this.codCas = codCas;
     }
 
     public int getNrohabitaciones() {
@@ -51,10 +51,20 @@ public class Casa extends Inmueble{
     public void setNropuerta(int nropuerta) {
         this.nropuerta = nropuerta;
     }
+    public void leer(){
+        super.leer();
+        System.out.println("Codigo Casa: ");
+        setCodCas(Leer.dato());
+        System.out.println("N° de habitaciones: ");
+        setNrohabitaciones(Leer.datoInt());
+        System.out.println("N° de puerta: ");
+        setNropuerta(Leer.datoInt());
+    }
+    
     @Override
     public void mostrar(){
         super.mostrar();
-        System.out.println("Codigo de Casa: "+getCodCasa());
+        System.out.println("Codigo Casa: "+getCodCas());
         System.out.println("N° de habitaciones: "+getNrohabitaciones());
         System.out.println("N° de puerta: "+getNropuerta());
     }
