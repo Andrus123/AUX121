@@ -14,27 +14,52 @@ public class Serie {
     private String genero;
     private String creador;
     private int nroTemporadas;
-    private Temporada[] temp = new Temporada[14];
+    private Temporada[] temp;
     
     public Serie(){
         this.nombre = "Breaking Bad";
         this.genero = "Drama";
         this.creador = "Vince Gilligan";
-        this.nroTemporadas = 1;
-        for (int i = 0; i < this.nroTemporadas; i++) {
-            this.temp[i] = new Temporada();
+        this.nroTemporadas = 2;
+        temp = new Temporada[nroTemporadas + 1];
+        for (int i = 1; i <= nroTemporadas; i++) {
+            temp[i] = new Temporada();
         }
     }
-
-    public Serie(String nombre, String genero, String creador, int nroTemporadas, Temporada[] temp) {
-        this.nombre = nombre;
-        this.genero = genero;
-        this.creador = creador;
-        this.nroTemporadas = nroTemporadas;
-        this.temp = temp;
+    
+    public void leer(){
+        System.out.println("Nombre: ");
+        setNombre(Leer.dato());
+        System.out.println("Género: ");
+        setGenero(Leer.dato());
+        System.out.println("Creador: ");
+        setCreador(Leer.dato());
+        System.out.println("N° de temporadas");
+        setNroTemporadas(Leer.datoInt());
+        for (int i = 1; i <= getNroTemporadas(); i++) {
+            temp[i].leer();
+        }
     }
-
-    public String getNombre() {
+    public void mostrar(){
+        System.out.println("Nombre: "+getNombre());
+        System.out.println("Género: "+getGenero());
+        System.out.println("Creador: "+getCreador());
+        System.out.println("N° de temporadas: "+getNroTemporadas());
+        for (int i = 1; i <= getNroTemporadas(); i++) {
+            temp[i].mostrar();
+        }
+    }
+    public void cantidadEpSerie(){
+        System.out.println("Serie: "+getNombre()+" - "+getNroTemporadas()+" Temporadas");
+        System.out.println("Total de episodios: ");
+        int total = 0;
+        for (int i = 1; i <= getNroTemporadas(); i++) {
+            total = total+temp[i].getNroEpisodios();
+        }
+        System.out.println(total+" episodios");
+    }
+    
+     public String getNombre() {
         return nombre;
     }
 
@@ -64,38 +89,5 @@ public class Serie {
 
     public void setNroTemporadas(int nroTemporadas) {
         this.nroTemporadas = nroTemporadas;
-    }
-
-    public Temporada[] getTemp() {
-        return temp;
-    }
-
-    public void setTemp(Temporada[] temp) {
-        this.temp = temp;
-    }
-    public void leer(){
-        System.out.println("Nombre: ");
-        setNombre(Leer.dato());
-        System.out.println("Género: ");
-        setGenero(Leer.dato());
-        System.out.println("Creador: ");
-        setCreador(Leer.dato());
-        System.out.println("N° de temporadas");
-        setNroTemporadas(Leer.datoInt());
-        for (int i = 0; i < getNroTemporadas(); i++) {
-            this.temp[i].leer();
-        }
-    }
-    public void mostrar(){
-        System.out.println("Nombre: "+getNombre());
-        System.out.println("Género: "+getGenero());
-        System.out.println("Creador: "+getCreador());
-        System.out.println("N° de temporadas: "+getNroTemporadas());
-        for (int i = 0; i < getNroTemporadas(); i++) {
-            this.temp[i].mostrar();
-        }
-    }
-    public void contarEpisodios(){
-        
     }
 }

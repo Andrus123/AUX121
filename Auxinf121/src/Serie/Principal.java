@@ -13,9 +13,11 @@ public class Principal {
     public static void main(String[] args){
         //a) Instanciar dos Series
         Serie s1 = new Serie();
+        Serie s2 = new Serie();
+        //s2.leer();
         s1.mostrar();
-        
+        //s2.mostrar();
         //b) Contar cuantos episodios tiene en total una serie
-        
+        s1.cantidadEpSerie();
     }
 }

@@ -10,22 +10,17 @@ package Serie;
  * @author Andrés Aquin
  */
 public class Temporada {
-    public int nroTemporada;
-    public int nroEpisodios;
-    public Episodio[] ep = new Episodio[12];
+    private int nroTemporada;
+    private int nroEpisodios;
+    private Episodio[] eps;
     
     public Temporada(){
-        this.nroTemporada = 5;
-        this.nroEpisodios = 12;
-        for (int i = 0; i < this.nroEpisodios; i++) {
-            this.ep[i] = new Episodio();
+        this.nroTemporada = 1;
+        this.nroEpisodios = 5;
+        eps = new Episodio[nroEpisodios+1];
+        for (int i = 1; i <= nroEpisodios; i++) {
+            eps[i] = new Episodio();
         }
-    }
-
-    public Temporada(int nroTemporada, int nroEpisodios, Episodio[] ep) {
-        this.nroTemporada = nroTemporada;
-        this.nroEpisodios = nroEpisodios;
-        this.ep = ep;
     }
 
     public int getNroTemporada() {
@@ -43,29 +38,30 @@ public class Temporada {
     public void setNroEpisodios(int nroEpisodios) {
         this.nroEpisodios = nroEpisodios;
     }
-
-    public Episodio[] getEp() {
-        return ep;
-    }
-
-    public void setEp(Episodio[] ep) {
-        this.ep = ep;
-    }
     
     public void leer(){
         System.out.println("N° de temporada: ");
         setNroTemporada(Leer.datoInt());
         System.out.println("N° de episodios: ");
         setNroEpisodios(Leer.datoInt());
-        for (int i = 0; i < getNroEpisodios(); i++) {
-            this.ep[i].leer();
+        for (int i = 1; i <= getNroEpisodios(); i++) {
+            eps[i].leer();
         }
     }
     public void mostrar(){
         System.out.println("N° de temporada: "+getNroTemporada());
         System.out.println("Cantidad de episodios: "+getNroEpisodios());
-        for (int i = 0; i < getNroEpisodios(); i++) {
-            this.ep[i].mostrar();
+        for (int i = 1; i <= getNroEpisodios(); i++) {
+            eps[i].mostrar();
         }
+    }
+    public int getNroep(int a){
+        return eps[a].getNroEpisodio();
+    }
+    public String getTituloep(int a){
+        return eps[a].getTitulo();
+    }
+    public double getDurep(int a){
+        return eps[a].getDuracion();
     }
 }
