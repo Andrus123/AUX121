@@ -14,8 +14,8 @@ public class Principal {
         //a) Instanciar dos Series
         Serie s1 = new Serie();
         s1.mostrar();
-        Serie s2 = new Serie();
-        s2.leer();
-        s2.mostrar();
+        
+        //b) Contar cuantos episodios tiene en total una serie
+        
     }
 }

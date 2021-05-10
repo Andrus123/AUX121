@@ -95,4 +95,7 @@ public class Serie {
             this.temp[i].mostrar();
         }
     }
+    public void contarEpisodios(){
+        
+    }
 }
