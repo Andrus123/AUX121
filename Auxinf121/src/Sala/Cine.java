@@ -32,6 +32,18 @@ public class Cine {
             sa[i] = new Sala();
         }
     }
+    public void adiSala(Sala x){
+        sa[nrosalas] = x;
+        nrosalas++;
+    }
+    public void salaPelicula(Pelicula x){
+        System.out.println("\nPelicula: "+x.nombre);
+        for (int i = 0; i < nrosalas; i++) {
+            if(x.nombre.equals(sa[i].pelicula)){
+                System.out.println("Sala: "+sa[i].nrosala);
+            }
+        }
+    }
     public void leer(){
         System.out.println("Nombre del Cine: ");
         setNombre(Leer.dato());

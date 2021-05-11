@@ -35,6 +35,9 @@ public class Sala {
             per[i] = new Persona();
         }
     }
+    public void adiPelicula(Pelicula x){
+        this.pelicula = x.nombre;
+    }
     public void leer(){
         System.out.println("N° de sala: ");
         setNrosala(Leer.datoInt());
@@ -49,7 +52,7 @@ public class Sala {
         }
     }
     public void mostrar(){
-        System.out.println("N° de sala: "+getNrosala());
+        System.out.println("\nN° de sala: "+getNrosala());
         System.out.println("Pelicula: "+getPelicula());
         System.out.println("Precio: "+getPrecio());
         System.out.println("N° de personas: "+getNropersonas());
