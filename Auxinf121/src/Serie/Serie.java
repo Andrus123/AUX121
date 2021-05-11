@@ -14,15 +14,26 @@ public class Serie {
     private String genero;
     private String creador;
     private int nroTemporadas;
-    private Temporada[] temp;
+    private Temporada[] temp = new Temporada[20];
     
     public Serie(){
         this.nombre = "Breaking Bad";
         this.genero = "Drama";
         this.creador = "Vince Gilligan";
-        this.nroTemporadas = 2;
+        this.nroTemporadas = 4;
         temp = new Temporada[nroTemporadas + 1];
         for (int i = 1; i <= nroTemporadas; i++) {
+            temp[i] = new Temporada();
+        }
+    }
+
+    public Serie(String nombre, String genero, String creador, int nroTemporadas) {
+        this.nombre = nombre;
+        this.genero = genero;
+        this.creador = creador;
+        this.nroTemporadas = nroTemporadas;
+        temp = new Temporada[nroTemporadas + 1];
+        for (int i = 1; i <= this.nroTemporadas; i++) {
             temp[i] = new Temporada();
         }
     }
@@ -36,7 +47,7 @@ public class Serie {
         setCreador(Leer.dato());
         System.out.println("N° de temporadas");
         setNroTemporadas(Leer.datoInt());
-        for (int i = 1; i <= getNroTemporadas(); i++) {
+        for (int i = 1; i <= nroTemporadas; i++) {
             temp[i].leer();
         }
     }
@@ -45,7 +56,7 @@ public class Serie {
         System.out.println("Género: "+getGenero());
         System.out.println("Creador: "+getCreador());
         System.out.println("N° de temporadas: "+getNroTemporadas());
-        for (int i = 1; i <= getNroTemporadas(); i++) {
+        for (int i = 1; i <= nroTemporadas; i++) {
             temp[i].mostrar();
         }
     }
@@ -61,10 +72,24 @@ public class Serie {
     public void buscarEp(int x){
         for (int i = 1; i <= getNroTemporadas(); i++) {
             temp[i].buscarEp(x);
+            break;
+        }
+    }
+    public void Mastemporadas(Serie x){
+        if(x.getNroTemporadas()>this.getNroTemporadas()){
+            System.out.println("Serie: "+x.getNombre()+" con "+x.getNroTemporadas()+" temporadas");
+        }else{
+            System.out.println("Serie: "+getNombre()+" con "+getNroTemporadas()+" temporadas");
+        }
+    }
+    public void Verificar(String x){
+        for (int i = 1; i <= getNroTemporadas(); i++) {
+            temp[i].Verificar(x);
+            break;
         }
     }
     
-     public String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 

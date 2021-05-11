@@ -44,6 +44,16 @@ public class Temporada {
             if(x==eps[i].getNroEpisodio()){
                 System.out.println("\nEpisodio #"+
                         eps[i].getNroEpisodio()+" - '"+eps[i].getTitulo()+"'");
+                break;
+            }
+        }
+    }
+    public void Verificar(String x){
+        for (int i = 1; i <= getNroEpisodios(); i++) {
+            if(x==(eps[i].getTitulo())){
+                System.out.println("\nEpisodio encontrado: "+eps[i].getTitulo()
+                        +" duración: "+eps[i].getDuracion());
+                break;
             }
         }
     }
