@@ -19,6 +19,19 @@ public class Episodio {
         this.titulo = "Ozymandias";
         this.duracion = 1.2;
     }
+     public void leer(){
+        System.out.println("N° de episodio: ");
+        setNroEpisodio(Leer.datoInt());
+        System.out.println("Titulo: ");
+        setTitulo(Leer.dato());
+        System.out.println("Duracion: ");
+        setDuracion(Leer.datoDouble());
+    }
+    public void mostrar(){
+        System.out.println("N° de episodio: "+getNroEpisodio());
+        System.out.println("Titulo: "+getTitulo());
+        System.out.println("Duracion: "+getDuracion());
+    }
 
     public int getNroEpisodio() {
         return nroEpisodio;
@@ -43,17 +56,5 @@ public class Episodio {
     public void setDuracion(double duracion) {
         this.duracion = duracion;
     }
-    public void leer(){
-        System.out.println("N° de episodio: ");
-        setNroEpisodio(Leer.datoInt());
-        System.out.println("Titulo: ");
-        setTitulo(Leer.dato());
-        System.out.println("Duracion: ");
-        setDuracion(Leer.datoDouble());
-    }
-    public void mostrar(){
-        System.out.println("N° de episodio: "+getNroEpisodio());
-        System.out.println("Titulo: "+getTitulo());
-        System.out.println("Duracion: "+getDuracion());
-    }
+   
 }

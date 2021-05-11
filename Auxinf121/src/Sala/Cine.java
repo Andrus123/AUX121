@@ -65,11 +65,6 @@ public class Cine {
         System.out.println("Asistentes varones: "+conman);
         System.out.println("Asistentes mujeres: "+conwom);
     }
-    public void generoPelicula(){
-        for (int i = 0; i < getNrosalas(); i++) {
-           
-        }
-    }
     public void leer(){
         System.out.println("Nombre del Cine: ");
         setNombre(Leer.dato());

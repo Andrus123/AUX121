@@ -12,18 +12,18 @@ package Evento;
 public class Musico {
     public String nombre;
     public int edad;
-    public Instrumento inst;
+    Instrumento inst;
     
     public Musico(){
         this.nombre = "Leon Lauregui";
         this.edad = 34;
-        this.inst = inst;
+        inst = new Instrumento();
     }
 
-    public Musico(String nombre, int edad, Instrumento inst) {
+    public Musico(String nombre, int edad, Instrumento in) {
         this.nombre = nombre;
         this.edad = edad;
-        this.inst = inst;
+        inst = in;
     }
     public void leer(){
         System.out.println("Nombre: ");
@@ -36,6 +36,11 @@ public class Musico {
         System.out.println("Nombre: "+getNombre());
         System.out.println("Edad: "+getEdad());
         inst.mostrar();
+    }
+    public void tipoInstrumento(String x){
+        if(x.equals(inst.nombre)){
+            System.out.println("Musico de "+x+" "+getNombre());
+        }
     }
 
     public String getNombre() {
@@ -52,13 +57,5 @@ public class Musico {
 
     public void setEdad(int edad) {
         this.edad = edad;
-    }
-
-    public Instrumento getInst() {
-        return inst;
-    }
-
-    public void setInst(Instrumento inst) {
-        this.inst = inst;
     }
 }

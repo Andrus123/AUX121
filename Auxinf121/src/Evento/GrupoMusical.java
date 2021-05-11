@@ -51,6 +51,11 @@ public class GrupoMusical {
             m[i].mostrar();
         }
     }
+    public void tipoInstrumento(String x){
+        for (int i = 0; i < getNroMusicos(); i++) {
+            m[i].tipoInstrumento(x);
+        }
+    }
 
     public String getNombre() {
         return nombre;

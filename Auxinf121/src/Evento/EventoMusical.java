@@ -16,7 +16,7 @@ public class EventoMusical {
     
     public EventoMusical(){
         this.nombreevento = "Lolapalooza";
-        this.nrogruposmus = 3;
+        this.nrogruposmus = 1;
         for (int i = 0; i < nrogruposmus; i++) {
             gm[i] = new GrupoMusical();
         }
@@ -46,6 +46,13 @@ public class EventoMusical {
         System.out.println("Grupos: ");
         for (int i = 0; i < getNrogruposmus(); i++) {
             gm[i].mostrar();
+        }
+    }
+    public void generocumbia(String x){
+        for (int i = 0; i < getNrogruposmus(); i++) {
+            if(gm[i].genero.equals(x)){
+                
+            }
         }
     }
 

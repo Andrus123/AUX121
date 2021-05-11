@@ -16,7 +16,7 @@ public class Principal {
         Verdura v2 = new Verdura("Raices","Nabo",4,1,1);
         Fruta f1 = new Fruta();
         Carne c1 = new Carne();
-        Carne c2 = new Carne("Aviar","700 gramos","Pechuga","Pollo",25,2,1);
+        Carne c2 = new Carne("Aviar","700 gramos","Pechuga","Pollo",25,0,1);
         //b) Mostrar todos los objetos anteriores
         v1.mostrar();
         v2.mostrar();
