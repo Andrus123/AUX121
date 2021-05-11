@@ -22,7 +22,11 @@ public class Sala {
         this.precio = 35;
         this.nropersonas = 3;
         for (int i = 0; i < nropersonas; i++) {
-            per[i] = new Persona();
+            if(i%2==0)
+            per[i] = new Persona("Juan Loayza", 35, "Masculino");
+            if(i%2!=0){
+            per[i] = new Persona("Kelly Valdivia",23,"Femenino");    
+            }
         }
     }
 
@@ -38,6 +42,12 @@ public class Sala {
     public void adiPelicula(Pelicula x){
         this.pelicula = x.nombre;
     }
+    public int totalIngreso(){
+        int total = 0;
+        total = getNropersonas()*getPrecio();
+        return total;
+    }
+    
     public void leer(){
         System.out.println("N° de sala: ");
         setNrosala(Leer.datoInt());

@@ -44,6 +44,32 @@ public class Cine {
             }
         }
     }
+    public void totalIngreso(){
+        int total = 0;
+        for (int i = 0; i < getNrosalas(); i++) {
+            total = total + sa[i].totalIngreso();
+        }
+        System.out.println("Ingresos totales: "+total);
+    }
+    public void generoSala(Sala x){
+        int conman = 0;
+        int conwom = 0;
+        for (int i = 0; i < x.nropersonas; i++) {
+            if(x.per[i].sexo=="Masculino"){
+                conman++;
+            }
+            if(x.per[i].sexo=="Femenino"){
+                conwom++;
+            }
+        }
+        System.out.println("Asistentes varones: "+conman);
+        System.out.println("Asistentes mujeres: "+conwom);
+    }
+    public void generoPelicula(){
+        for (int i = 0; i < getNrosalas(); i++) {
+           
+        }
+    }
     public void leer(){
         System.out.println("Nombre del Cine: ");
         setNombre(Leer.dato());
