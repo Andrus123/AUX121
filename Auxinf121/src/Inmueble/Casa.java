@@ -17,14 +17,14 @@ public class Casa extends Inmueble{
     public Casa(){
         super();
         this.costo = 10700.50;
-        this.tamaño = 850.50;
+        this.tamanio = 850.50;
         this.codCas = "HOME123";
         this.nrohabitaciones = 7;
         this.nropuerta = 40;
     }
 
-    public Casa(String codCas, int nrohabitaciones, int nropuerta, double costo, double tamaño) {
-        super(costo, tamaño);
+    public Casa(String codCas, int nrohabitaciones, int nropuerta, double costo, double tamanio) {
+        super(costo, tamanio);
         this.codCas = codCas;
         this.nrohabitaciones = nrohabitaciones;
         this.nropuerta = nropuerta;

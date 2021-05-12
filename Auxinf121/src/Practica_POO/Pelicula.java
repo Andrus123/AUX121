@@ -12,18 +12,18 @@ package Practica_POO;
 public class Pelicula {
     private String titulo;
     private String director;
-    private int año;
+    private int anio;
     
     public Pelicula(){
         this.titulo = "GoodFellas";
         this.director = "Martin Scorscese";
-        this.año = 1975;
+        this.anio = 1975;
     }
 
-    public Pelicula(String titulo, String director, int año) {
+    public Pelicula(String titulo, String director, int anio) {
         this.titulo = titulo;
         this.director = director;
-        this.año = año;
+        this.anio = anio;
     }
 
     public String getTitulo() {
@@ -42,15 +42,15 @@ public class Pelicula {
         this.director = director;
     }
 
-    public int getAño() {
-        return año;
+    public int getAnio() {
+        return anio;
     }
 
-    public void setAño(int año) {
-        this.año = año;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
     public void mostrar(){
-        System.out.println("Pelicula:" + getTitulo()+" Dirigida por: "+getDirector()+"  Año: "+getAño());
+        System.out.println("Pelicula:" + getTitulo()+" Dirigida por: "+getDirector()+"  Año: "+getAnio());
     }
     public void verificar(Pelicula x){
         if(this.director.equals(x.getDirector())){
@@ -61,8 +61,8 @@ public class Pelicula {
         }
     }
     public void comparar(Pelicula x){
-        if(this.año==x.año){
-            System.out.println("Ambas peliculas fueron estrenadas en: "+getAño());
+        if(this.anio==x.anio){
+            System.out.println("Ambas peliculas fueron estrenadas en: "+getAnio());
         }
         else{
             System.out.println("Fueron estrenadas en diferentes años");

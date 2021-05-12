@@ -31,8 +31,8 @@ public class Condominio extends Inmueble{
         }
     }
 
-    public Condominio(String nombre, Casa[] codCasas, Edificio[] codEdificios, double costo, double tamaño) {
-        super(costo, tamaño);
+    public Condominio(String nombre, Casa[] codCasas, Edificio[] codEdificios, double costo, double tamanio) {
+        super(costo, tamanio);
         this.nombre = nombre;
         this.codCasas = codCasas;
         this.codEdificios = codEdificios;

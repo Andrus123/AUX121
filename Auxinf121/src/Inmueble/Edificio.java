@@ -17,14 +17,14 @@ public class Edificio extends Inmueble{
     public Edificio(){
         super();
         this.costo = 580000.50;
-        this.tamaño = 1500.80;
+        this.tamanio = 1500.80;
         this.codEd = "TF1234";
         this.nrodepartamentos = 9;
         this.Nombreencargado = "Juan Perez";
     }
 
-    public Edificio(String codEd, int nrodepartamentos, String Nombreencargado, double costo, double tamaño) {
-        super(costo, tamaño);
+    public Edificio(String codEd, int nrodepartamentos, String Nombreencargado, double costo, double tamanio) {
+        super(costo, tamanio);
         this.codEd = codEd;
         this.nrodepartamentos = nrodepartamentos;
         this.Nombreencargado = Nombreencargado;

@@ -10,5 +10,5 @@ package Practica_Sobrecarga;
  * @author andru
  */
 public class Biblioteca {
-    private String nombre;
+    
 }

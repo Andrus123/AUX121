@@ -12,7 +12,7 @@ public class Juego {
     private String nombre;
     private String categoria;
     private String version;
-    private int añoCreacion;
+    private int anioCreacion;
 
     public String getNombre() {
         return nombre;
@@ -38,19 +38,19 @@ public class Juego {
         this.version = version;
     }
     
-    public int getAñoCreacion() {
-		return añoCreacion;
+    public int getAnioCreacion() {
+		return anioCreacion;
 	}
 
-	public void setAñoCreacion(int añoCreacion) {
-		this.añoCreacion = añoCreacion;
+	public void setAnioCreacion(int anioCreacion) {
+		this.anioCreacion = anioCreacion;
 	}
 
 	public Juego(){
         nombre = "fortnite";
         categoria = "consola";
         version = "";
-        añoCreacion = 0;
+        anioCreacion = 0;
     }
     
     public void leer(){
@@ -61,12 +61,12 @@ public class Juego {
         System.out.println("version: ");
         this.version = Leer.dato();
         System.out.println("año de creación: ");
-        this.añoCreacion = Leer.datoInt();
+        this.anioCreacion = Leer.datoInt();
     }
     public void mostrar(){
         System.out.println("Nombre: " + getNombre());
         System.out.println("categoria: " + getCategoria());
         System.out.println("version: " + getVersion());
-        System.out.println("año de creacion: " +getAñoCreacion());
+        System.out.println("año de creacion: " +getAnioCreacion());
     }
 }

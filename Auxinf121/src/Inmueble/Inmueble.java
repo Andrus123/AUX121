@@ -11,16 +11,16 @@ package Inmueble;
  */
 public class Inmueble {
     protected double costo;
-    protected double tamaño; // en m2
+    protected double tamanio; // en m2
     
     public Inmueble(){
         this.costo = 0;
-        this.tamaño = 0;
+        this.tamanio = 0;
     }
 
-    public Inmueble(double costo, double tamaño) {
+    public Inmueble(double costo, double tamanio) {
         this.costo = costo;
-        this.tamaño = tamaño;
+        this.tamanio = tamanio;
     }
 
     public double getCosto() {
@@ -31,21 +31,21 @@ public class Inmueble {
         this.costo = costo;
     }
 
-    public double getTamaño() {
-        return tamaño;
+    public double getTamanio() {
+        return tamanio;
     }
 
-    public void setTamaño(double tamaño) {
-        this.tamaño = tamaño;
+    public void setTamanio(double tamanio) {
+        this.tamanio = tamanio;
     }
     public void leer(){
         System.out.println("Costo del inmueble: ");
         setCosto(Leer.datoDouble());
         System.out.println("Tamaño del inmueble: ");
-        setTamaño(Leer.datoDouble());
+        setTamanio(Leer.datoDouble());
     }
     public void mostrar(){
         System.out.println("Costo: "+getCosto()+" $us");
-        System.out.println("Tama�o: "+getTamaño());
+        System.out.println("Tama�o: "+getTamanio());
     }
 }

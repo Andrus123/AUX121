@@ -72,7 +72,6 @@ public class Serie {
     public void buscarEp(int x){
         for (int i = 1; i <= getNroTemporadas(); i++) {
             temp[i].buscarEp(x);
-            break;
         }
     }
     public void Mastemporadas(Serie x){
@@ -85,7 +84,6 @@ public class Serie {
     public void Verificar(String x){
         for (int i = 1; i <= getNroTemporadas(); i++) {
             temp[i].Verificar(x);
-            break;
         }
     }
     

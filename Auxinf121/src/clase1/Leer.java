@@ -65,8 +65,7 @@ public class Leer
     } //fin del metodo datoLong
 
 
-    @SuppressWarnings("deprecation")
-	public static float datoFloat ()
+    public static float datoFloat ()
     {
 	try
 	{
@@ -84,8 +83,7 @@ public class Leer
     {
 	try
 	{
-	    @SuppressWarnings("deprecation")
-		Double d = new Double (dato ());
+	    Double d = new Double (dato ());
 	    return d.doubleValue ();
 	}
 	catch (NumberFormatException e)

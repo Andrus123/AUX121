@@ -25,7 +25,7 @@ public class Clase1 {
             System.out.println("Son de la misma version");
             c++;
         }
-          if (j1.getAñoCreacion() == j2.getAñoCreacion()) {
+          if (j1.getAnioCreacion() == j2.getAnioCreacion()) {
             System.out.println("Se crearon el mismo año");
             c++;
         }

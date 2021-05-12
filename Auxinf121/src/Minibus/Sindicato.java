@@ -57,7 +57,8 @@ public class Sindicato {
         }
         System.out.println("Minibuses Restringidos: "+contador);
     }
-    public void Verificar(String x){
+    @SuppressWarnings("unused")
+	public void Verificar(String x){
         for (int i = 0; i < getNminis(); i++) {
             if(x==mb[i].chofer){
                 System.out.println("Si existe el minibus con el chofer: "+x);

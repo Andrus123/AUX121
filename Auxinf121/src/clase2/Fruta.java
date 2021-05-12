@@ -144,10 +144,10 @@ public class Fruta {
     }
 
     public void Verificar(String x) {
-        boolean sw = false;
+        int sw = 0;
         for (int i = 0; i < getNroVit(); i++) {
             if (Fruta.this.getV().equals(x)) {
-                sw = true;
+                sw = 1;
             }
         }
     }

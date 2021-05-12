@@ -84,7 +84,7 @@ public class Serie {
     public void leer(){
         System.out.println("Titulo de la serie:");
         this.titulo = Leer.dato();
-        System.out.println("Género de la serie:");
+        System.out.println("Genero de la serie:");
         this.genero = Leer.dato();
         System.out.println("Creador de la serie:");
         this.creador = Leer.dato();
@@ -137,7 +137,7 @@ public class Serie {
         
 //        s2.leer();
 //        s1.mostrar();
-//        s2.mostrar();
+        s2.mostrar();
 //        s1.verificar(s2);
         s1.contar();
 //        s2.contar();
