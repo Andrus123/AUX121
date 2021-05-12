@@ -1,4 +1,4 @@
-
+package Practica_POO;
 
 import java.io.*;
 public class Leer
@@ -62,36 +62,6 @@ public class Leer
 	    return Long.MIN_VALUE; // valor mas pequeo
 	}
     } //fin del metodo datoLong
-
-
-    public static float datoFloat ()
-    {
-	try
-	{
-	    Float f = new Float (dato ());
-	    return f.floatValue ();
-	}
-	catch (NumberFormatException e)
-	{
-	    return Float.NaN; // No es un Numero; valor float.
-	}
-    } //fin del metodo datoFloat
-
-
-    public static double datoDouble ()
-    {
-	try
-	{
-	    Double d = new Double (dato ());
-	    return d.doubleValue ();
-	}
-	catch (NumberFormatException e)
-	{
-	    System.out.println ("Error: Tipo de dato double: " + Double.MIN_VALUE + " - " + Double.MAX_VALUE);
-	    return Double.NaN; // No es un Numero; valor double.
-	}
-    } //fin del metodo datoDouble
-
 
     public static char caracter ()
     {

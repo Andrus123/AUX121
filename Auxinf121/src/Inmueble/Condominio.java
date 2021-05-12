@@ -97,11 +97,11 @@ public class Condominio extends Inmueble{
     @Override
     public void mostrar(){
         System.out.println("\nCondominio: "+getNombre());
-        System.out.println("\nN° de casas: "+getNcasas());
+        System.out.println("\nN� de casas: "+getNcasas());
         for (int i = 0; i < this.ncasas; i++) {
             codCasas[i].mostrar();
         }
-        System.out.println("\nN° de edificios: "+getNedif());
+        System.out.println("\nN� de edificios: "+getNedif());
         for (int i = 0; i < this.nedif; i++) {
             codEdificios[i].mostrar();
         }

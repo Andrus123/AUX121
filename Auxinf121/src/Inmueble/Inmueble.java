@@ -7,7 +7,7 @@ package Inmueble;
 
 /**
  *
- * @author Andrés Aquin
+ * @author Andres Aquin
  */
 public class Inmueble {
     protected double costo;
@@ -46,6 +46,6 @@ public class Inmueble {
     }
     public void mostrar(){
         System.out.println("Costo: "+getCosto()+" $us");
-        System.out.println("Tamaño: "+getTamaño());
+        System.out.println("Tama�o: "+getTamaño());
     }
 }

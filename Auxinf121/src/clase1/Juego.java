@@ -6,7 +6,7 @@
 package clase1;
 /**
  *
- * @author andru
+ * @author Andr�s Aquin
  */
 public class Juego {
     private String nombre;
@@ -37,16 +37,16 @@ public class Juego {
     public void setVersion(String version) {
         this.version = version;
     }
-
-    public int getAñoCreacion() {
-        return añoCreacion;
-    }
-
-    public void setAñoCreacion(int añoCreacion) {
-        this.añoCreacion = añoCreacion;
-    }
     
-    public Juego(){
+    public int getAñoCreacion() {
+		return añoCreacion;
+	}
+
+	public void setAñoCreacion(int añoCreacion) {
+		this.añoCreacion = añoCreacion;
+	}
+
+	public Juego(){
         nombre = "fortnite";
         categoria = "consola";
         version = "";
