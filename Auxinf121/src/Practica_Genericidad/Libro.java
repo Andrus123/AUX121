@@ -17,9 +17,15 @@ public class Libro {
         this.titulo = "Hackers and Painters";
         this.nropaginas = 245;
     }
+
+    public Libro(String titulo, int nropaginas) {
+        this.titulo = titulo;
+        this.nropaginas = nropaginas;
+    }
+    
     
     public void mostrar(){
-        System.out.println("Libro: "+getTitulo());
+        System.out.println("\nLibro: "+getTitulo());
         System.out.println("# de Paginas: "+getNropaginas());
     }
 

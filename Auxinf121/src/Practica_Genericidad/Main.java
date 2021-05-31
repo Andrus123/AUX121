@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Practica_Genericidad;
+import java.util.Iterator;
 import java.util.Vector;
 /**
  *
@@ -21,10 +22,25 @@ public class Main {
         System.out.println(Enteros);
         //b) Implemenetar un Vector de String
         Vector<String> Strings = new Vector<>();
-        Strings.add("Juan Perez - 14 años");
-        Strings.add("Peter Parker - 23 años");
-        Strings.add("Mauren Quiroga - 24 años");
-        Strings.add("Andres Aquin - 24 años");
-        System.err.println(Strings);
+        Strings.add("\nJuan Perez - 14 anios");
+        Strings.add("Peter Parker - 23 anios");
+        Strings.add("Mauren Quiroga - 24 anios");
+        Strings.add("Andres Aquin - 24 anios");
+        for (Iterator<String> iterator = Strings.iterator(); iterator.hasNext();) {
+            String next = iterator.next();
+            System.out.println(next);
+        }
+        //c) Implementar un Vector de Libro
+        Libro l1 = new Libro("Zero to One",250);
+        Libro l2 = new Libro("Principles",250);
+        Libro l3 = new Libro();
+        Vector<Libro> Libros = new Vector<>();
+        Libros.add(l1);
+        Libros.add(l2);
+        Libros.add(l3);
+        for (Iterator<Libro> iterator = Libros.iterator(); iterator.hasNext();) {
+            Libro next = iterator.next();
+            next.mostrar();
+        }
     }
 }
