@@ -15,27 +15,25 @@ public class Main3 {
     public static void main(String[] args) {
         //a) Instanciar 3 personas
         Persona<String> p1 = new Persona("Juan Perez", 45, "5724123");
-        p1.mostrar();
         Persona<String> p2 = new Persona("Andres Aquin", 24, "4534224");
-        p2.mostrar();
         Persona<String> p3 = new Persona("Mauren Quiroga",24,"4534224");
-        p3.mostrar();
         //b) Verificar que las personas no tengan el ci repetido, de ser asi
         // asignarles la terminación "CI-A" y "CI-B"
-        if(p1.getCi().equals(p2.getCi())){
-            p1.setCi(p1.getCi()+"CI-A");
-            p2.setCi(p2.getCi()+"CI-B");
+        Vector<Persona> personas = new Vector<>();
+        personas.add(p1);
+        personas.add(p2);
+        personas.add(p3);
+        for (int i = 0; i < personas.size()-1; i++) {
+            if(personas.get(i).getCi().equals(personas.get(i+1).getCi())){
+                personas.get(i).setCi(personas.get(i).getCi()+"CI-A");
+                personas.get(i+1).setCi(personas.get(i+1).getCi()+"CI-B");
+            }
         }
-        if(p2.getCi().equals(p3.getCi())){
-            p2.setCi(p2.getCi()+"CI-A");
-            p3.setCi(p3.getCi()+"CI-B");
+        //c)mostrar a todas las personas
+        System.out.println("Verificando CI Similares...");
+        for (Persona persona : personas) {
+            persona.mostrar();
         }
-        if(p1.getCi().equals(p3.getCi())){
-            p1.setCi(p1.getCi()+"CI-A");
-            p3.setCi(p3.getCi()+"CI-B");
-        }
-        p2.mostrar();
-        p3.mostrar();
-        //mostrar a todas las personas
+        
     }
 }
