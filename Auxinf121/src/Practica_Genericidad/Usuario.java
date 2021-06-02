@@ -12,26 +12,26 @@ package Practica_Genericidad;
 public class Usuario <T>{
     private String cod;
     private String nom;
-    private T contraseña;
+    private T contrasena;
     
     public Usuario(){
         this.cod = "dsff123";
         this.nom = "Peter Parker";
-        this.contraseña = (T)contraseña;
+        this.contrasena = (T)contrasena;
     }
 
-    public Usuario(String cod, String nom, T contraseña) {
+    public Usuario(String cod, String nom, T contrasena) {
         this.cod = cod;
         this.nom = nom;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
     }
     
     public void mostrar(){
         System.out.println("Codigo: "+getCod());
         System.out.println("Nombre: "+getNom());
-        System.out.println("Contraseña"+getContraseña());
+        System.out.println("Contraseña: "+getContrasena());
     }
-
+    
     public String getCod() {
         return cod;
     }
@@ -48,12 +48,12 @@ public class Usuario <T>{
         this.nom = nom;
     }
 
-    public T getContraseña() {
-        return contraseña;
+    public T getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(T contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(T contrasena) {
+        this.contrasena = contrasena;
     }
     
 }
