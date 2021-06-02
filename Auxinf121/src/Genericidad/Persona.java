@@ -12,6 +12,7 @@ package Genericidad;
 public class Persona <A, B>{
     private A nombre, apellido;
     private B edad;
+    
     public Persona(A nombre,A apellido, B edad){
         this.apellido = apellido;
         this.nombre = nombre;
