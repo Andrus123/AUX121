@@ -29,17 +29,17 @@ public class Main4 {
         }
         //b)Verificar cual usuario tiene la contraseña más larga
         int maxancho = 0;
-        String maxcontraseña = "";
+        String maxcontrasena = "";
         String maxuser = "";
         for (Iterator<Usuario> iterator = usuarios.iterator(); iterator.hasNext();) {
             Usuario next = iterator.next();
             if(next.getContrasena().toString().length()>maxancho){
                 maxancho = next.getContrasena().toString().length();
-                maxcontraseña = next.getContrasena().toString();
+                maxcontrasena = next.getContrasena().toString();
                 maxuser = next.getNom();
             }
         }
-        System.out.println("\nContraseña más ancha: "+maxcontraseña+" de usuario: "+maxuser);
+        System.out.println("\nContraseña más ancha: "+maxcontrasena+" de usuario: "+maxuser);
         //c) Mostrar a los usuarios que solo tienen números en sus contraseñas
         for (Usuario usuario : usuarios) {
             if(usuario.getContrasena().getClass().getSimpleName().equals("Integer")){
