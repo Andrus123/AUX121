@@ -5,80 +5,130 @@
  */
 package Contacto;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 /**
  *
  * @author Andr√©s Aquin
  */
-public class ArchContacto {
-    protected String nomContacto;
-    protected int n;
-    protected Contacto[] contactos;
+public class ArchContacto implements Serializable{
+    protected String nomArch;
+    private Contacto contacto;
+    private Contacto contactoelimin;
     
-    public ArchContacto(){
-        this.nomContacto = "";
-        this.contactos = new Contacto[4];
+    public ArchContacto(String nom) {
+    	this.nomArch = nom;
     }
-    
-    public void addContacto(Contacto c1){
-        try {
-            n++;
-            contactos[n] = c1;
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Error: "+e);
-        }
+    public void Crear() throws ClassNotFoundException, IOException{
+    	ObjectOutputStream aContacto = new ObjectOutputStream(new FileOutputStream(nomArch));
+    	aContacto.close();
     }
-    
-    public void listar(){
-        for (int i = 1; i < contactos.length; i++) {
-            contactos[i].mostrar();
-        }
+    public void Adicionar() throws ClassNotFoundException, IOException{
+    	String op;
+    	ObjectOutputStream aContacto = null;
+    	try {
+			if(new File(nomArch).exists()) {
+				aContacto = new AddObjectOutputStream(new FileOutputStream(nomArch,true));
+			}else {
+				aContacto = new ObjectOutputStream(new FileOutputStream(nomArch,true));
+			}
+			
+			do {
+				contacto = new Contacto();
+				contacto.leer();
+				aContacto.writeObject(contacto);
+				System.out.println("Desea continuar? s/n");
+				op = Leer.dato();
+			}while(op.equals("s"));
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Contacto AÒadidos Exitosamente");
+		}finally {
+			aContacto.close();
+		}
     }
-    
-    public void guardar(ArchContacto ac1){
-        try {
-            ObjectOutputStream w1 = new ObjectOutputStream(new FileOutputStream("Contactos.dat"));
-            w1.writeObject(ac1);
-            w1.close();
-        } catch (IOException e) {
-            System.out.println("Error: "+e);
-        }
+    public void listar() throws ClassNotFoundException, IOException{
+    	ObjectInputStream aContacto = null;
+    	System.out.println("CONTACTOS: ");
+    	try {
+			aContacto = new ObjectInputStream(new FileInputStream(nomArch));
+			while(true) {
+				contacto = new Contacto();
+				contacto = (Contacto)aContacto.readObject();
+				contacto.mostrar();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Fin de Listado");
+		}finally {
+			aContacto.close();
+		}
     }
-    
-    public ArchContacto recuperar() throws IOException, ClassNotFoundException{
-        ObjectInputStream r1 = new ObjectInputStream(new FileInputStream("Contactos.dat"));
-        ArchContacto ac1 = (ArchContacto) r1.readObject();
-        r1.close();
-        return(ac1);
+    public void Verificar(String x, String y) throws ClassNotFoundException, IOException{
+    	ObjectInputStream aContacto = null;
+    	try {
+			aContacto = new ObjectInputStream(new FileInputStream(nomArch));
+			while(true) {
+				contacto = new Contacto();
+				contacto = (Contacto)aContacto.readObject();
+				if(contacto.getNombre().equals(x) && contacto.getEtiqueta().equals(y)) {
+					System.out.println("\nContacto Encontrado: ");
+					contacto.mostrar();
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Fin de Listado");
+		}finally {
+			aContacto.close();
+		}
     }
-
-    public String getNomContacto() {
-        return nomContacto;
+    public void Mostrar(String x) throws ClassNotFoundException, IOException{
+    	ObjectInputStream aContacto = null;
+    	try {
+			aContacto = new ObjectInputStream(new FileInputStream(nomArch));
+			while(true) {
+				contacto = new Contacto();
+				contacto = (Contacto)aContacto.readObject();
+				if(contacto.getEtiqueta().equals(x)) {
+					System.out.println("\nContacto Encontrado: ");
+					contacto.mostrar();
+				}
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Fin del Mostrado");
+		}finally {
+			aContacto.close();
+		}
     }
-
-    public void setNomContacto(String nomContacto) {
-        this.nomContacto = nomContacto;
+    public void Eliminar(int x) throws ClassNotFoundException, IOException{
+    	ObjectInputStream aContacto = null;
+    	
+    	try {
+			aContacto = new ObjectInputStream(new FileInputStream(nomArch));
+			while(true) {
+				contacto = new Contacto();
+				contacto = (Contacto)aContacto.readObject();
+				if(contacto.getTelefono()==x) {
+					System.out.println("\nContacto Encontrado para eliminar: ");
+					contacto.mostrar();
+					contacto = null;
+					System.out.println("Contacto Eliminado");
+				}
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Fin de Listado");
+		}finally {
+			aContacto.close();
+		}
     }
-
-    public int getN() {
-        return n;
-    }
-
-    public void setN(int n) {
-        this.n = n;
-    }
-
-    public Contacto[] getContactos() {
-        return contactos;
-    }
-
-    public void setContactos(Contacto[] contactos) {
-        this.contactos = contactos;
-    }
-    
 }
