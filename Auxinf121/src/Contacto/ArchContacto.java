@@ -108,7 +108,7 @@ public class ArchContacto implements Serializable{
 			aContacto.close();
 		}
     }
-    public void Eliminar(int x) throws ClassNotFoundException, IOException{
+    public Contacto Eliminar(int x) throws ClassNotFoundException, IOException{
     	ObjectInputStream aContacto = null;
     	
     	try {
@@ -130,5 +130,6 @@ public class ArchContacto implements Serializable{
 		}finally {
 			aContacto.close();
 		}
+		return contacto;
     }
 }
