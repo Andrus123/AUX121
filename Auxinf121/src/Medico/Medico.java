@@ -12,6 +12,21 @@ public class Medico {
 		this.nroEspecialidad = nroEspecialidad;
 		this.especialidad = especialidad;
 	}
+	public void leer() {
+		System.out.println("Nombre: ");
+		setNombre(Leer.dato());
+		System.out.println("Codigo Medico: ");
+		setCodMedico(Leer.dato());
+		System.out.println("N° de especialidad: ");
+		setNroEspecialidad(Leer.datoInt());
+		for (int i = 0; i < getNroEspecialidad(); i++) {
+			especialidad[i] = Leer.dato();
+		}
+	}
+	public void mostrar() {
+		System.out.println();
+		
+	}
 	public String getNombre() {
 		return nombre;
 	}

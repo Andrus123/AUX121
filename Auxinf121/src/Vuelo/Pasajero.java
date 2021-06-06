@@ -16,6 +16,16 @@ public class Pasajero implements Serializable{
 		this.codigo = codigo;
 		this.nombrePasajero = nombrePasajero;
 	}
+	public void leer() {
+		System.out.println("Codigo: ");
+		setCodigo(Leer.dato());
+		System.out.println("Nombre del Pasajero: ");
+		setNombrePasajero(Leer.dato());
+	}
+	public void mostrar() {
+		System.out.println("Codigo: "+getCodigo());
+		System.out.println("Nombre del Pasajero: "+getNombrePasajero());
+	}
 
 	public String getCodigo() {
 		return codigo;

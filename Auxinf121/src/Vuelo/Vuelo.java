@@ -25,6 +25,27 @@ public class Vuelo implements Serializable{
 		this.origen = origen;
 		this.destino = destino;
 	}
+	
+	public void leer() {
+		System.out.println("Codigo: ");
+		setCodigo(Leer.dato());
+		System.out.println("Fecha: ");
+		setFecha(Leer.dato());
+		System.out.println("Hora: ");
+		setHora(Leer.dato());
+		System.out.println("Origen: ");
+		setOrigen(Leer.dato());
+		System.out.println("Destino: ");
+		setDestino(Leer.dato());
+	}
+	
+	public void mostrar() {
+		System.out.println("\nCodigo: "+getCodigo());
+		System.out.println("Fecha: "+getFecha());
+		System.out.println("Hora: "+getHora());
+		System.out.println("Origen: "+getOrigen());
+		System.out.println("Destino: "+getDestino());
+	}
 
 	public String getCodigo() {
 		return codigo;
