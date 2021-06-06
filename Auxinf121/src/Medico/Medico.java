@@ -1,10 +1,18 @@
 package Medico;
 
-public class Medico {
+import java.io.Serializable;
+
+public class Medico implements Serializable{
 	private String nombre;
 	private String codMedico;
 	private int nroEspecialidad;
-	private String especialidad[];
+	private String especialidad[] = new String[10];
+	
+	public Medico() {
+		this.nombre = "";
+		this.codMedico = "";
+		this.nroEspecialidad = 0;
+	}
 	public Medico(String nombre, String codMedico, int nroEspecialidad, String[] especialidad) {
 		super();
 		this.nombre = nombre;
@@ -20,13 +28,29 @@ public class Medico {
 		System.out.println("N° de especialidad: ");
 		setNroEspecialidad(Leer.datoInt());
 		for (int i = 0; i < getNroEspecialidad(); i++) {
+			System.out.println("Especialidad");
 			especialidad[i] = Leer.dato();
 		}
 	}
 	public void mostrar() {
-		System.out.println();
-		
+		System.out.println("Nombre: "+getNombre());
+		System.out.println("Codigo Médico: "+getCodMedico());
+		System.out.println("N° de especialidades: "+getNroEspecialidad());
+		System.out.println("Especialidades: ");
+		for (int i = 0; i < getNroEspecialidad(); i++) {
+			System.out.println(especialidad[i]);
+		}
 	}
+	
+	public boolean mostrarxespec(String x) {
+		for (int i = 0; i < getNroEspecialidad(); i++) {
+			if(especialidad[i].equals(x)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
