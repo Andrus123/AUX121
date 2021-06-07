@@ -34,7 +34,7 @@ public class Curso implements Serializable{
 	}
 	
 	public void mostrar() {
-		System.out.println("ID del Curso: "+getIdcurso());
+		System.out.println("\nID del Curso: "+getIdcurso());
 		System.out.println("Materia: "+getMateria());
 		System.out.println("N° de alumnos: "+getNroal());
 		System.out.println("\nAlumnos: ");
@@ -54,9 +54,9 @@ public class Curso implements Serializable{
 	}
 	
 	public void adicionaralumno() {
-		setNroal(nroal++);
 		A[getNroal()] = new Alumno();
 		A[getNroal()].leer();
+		this.nroal++;
 	}
 
 	public String getIdcurso() {

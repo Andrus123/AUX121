@@ -44,29 +44,36 @@ public class ArchCurso implements Serializable{
 			aCurso.close();
 		}
 	}
-	public void Adicionaralumno()throws ClassNotFoundException, IOException{
-		String op;
-		ObjectOutputStream aCursos = null;
-		ObjectOutputStream aCurso = null;
+	public boolean Adicionaralumno(String idaula)throws ClassNotFoundException, IOException{
+		String resp;
+		boolean sw = false;
+		ObjectInputStream aCurso = null;
+		ObjectOutputStream archAux = null;
 		try {
-			if(new File(nomCurso).exists()) {
-				aCurso = new AddObjectOutputStream(new FileOutputStream(nomCurso,true));
-			}else {
-				aCurso = new ObjectOutputStream(new FileOutputStream(nomCurso,true));
+			aCurso = new ObjectInputStream(new FileInputStream(nomCurso));
+			archAux = new ObjectOutputStream(new FileOutputStream("copia.dat", true));
+			while(true) {
+				curso = new Curso();
+				curso = (Curso)aCurso.readObject();
+				if(curso.getIdcurso().equals(idaula)) {
+					curso.adicionaralumno();
+					curso.mostrar();
+					archAux.writeObject(curso);
+					sw = true;
+				}
 			}
-			do {
-				curso = new Curso();			
-				 
-				aCurso.writeObject(curso);
-				System.out.println("Desea Continuar? s/n");
-				op = Leer.dato();
-			} while (op.equals("s"));
 		} catch (Exception e) {
-			System.out.println("Alumnos añadidos exitosamente");
+			System.out.println("Fin adicion alumno");
 			// TODO: handle exception
 		}finally {
 			aCurso.close();
+			archAux.close();
+			File f1 = new File(nomCurso);
+			File f2 = new File("copia.dat");
+			f1.delete();
+			f2.renameTo(f1);
 		}
+		return sw;
 	}
 	public void listar() throws ClassNotFoundException, IOException{
 		ObjectInputStream aCurso = null;
@@ -121,5 +128,43 @@ public class ArchCurso implements Serializable{
 		}finally {
 			aCurso.close();
 		}
+	}
+	public boolean IntercambiarProfes(String idaulaX, String idaulaY)throws ClassNotFoundException, IOException{
+		Profesor aux1 = null;
+		Profesor aux2 = null;
+		boolean sw = false;
+		ObjectInputStream aCurso = null;
+		ObjectOutputStream archAux = null;
+		try {
+			aCurso = new ObjectInputStream(new FileInputStream(nomCurso));
+			archAux = new ObjectOutputStream(new FileOutputStream("copia.dat", true));
+			while(true) {
+				curso = new Curso();
+				curso = (Curso)aCurso.readObject();
+				if(curso.getIdcurso().equals(idaulaX))
+					aux1 = curso.P;
+				if(curso.getIdcurso().equals(idaulaY))
+					aux2 = curso.P;
+				if(curso.getIdcurso().equals(idaulaX)) {
+					curso.setP(aux2);
+				}
+				if(curso.getIdcurso().equals(idaulaY)) {
+					curso.setP(aux1);
+				}
+				archAux.writeObject(curso);
+				 sw = true;
+			}
+		} catch (Exception e) {
+			System.out.println("Fin Intercambio");
+			// TODO: handle exception
+		}finally {
+			aCurso.close();
+			archAux.close();
+			File f1 = new File(nomCurso);
+			File f2 = new File("copia.dat");
+			f1.delete();
+			f2.renameTo(f1);
+		}
+		return sw;
 	}
 }

@@ -20,7 +20,8 @@ public class Principal {
 						+"\n 4. LISTAR curso"
 						+"\n 5. MOSTRAR materias por RDA (Registro docente administrativo)"
 						+"\n 6. MOSTRAR ALUMNOS mayores a 15"
-						+"\n 7. Salir");
+						+"\n 7. INTERCAMBIAR docentes de dos aulas"
+						+"\n 8. Salir");
 				op = Leer.datoInt();
 				switch (op) {
 				case 1:
@@ -30,7 +31,9 @@ public class Principal {
 					archcurso.Adicionar();
 					break;
 				case 3:
-					archcurso.Adicionaralumno();
+					System.out.println("Ingrese el ID del curso donde se adicionará alumno: ");
+					String id = Leer.dato();
+					archcurso.Adicionaralumno(id);
 					break;
 				case 4:
 					archcurso.listar();
@@ -40,10 +43,15 @@ public class Principal {
 					break;
 				case 6:
 					archcurso.mostraralumnosmayoresdequince();
+				case 7:
+					System.out.println("Ingrese los ID de Aulas a intercambiar docentes");
+					String X = Leer.dato();
+					String Y = Leer.dato();
+					archcurso.IntercambiarProfes(X, Y);
 				default:
 					break;
 				}
-			} while (op!=7);
+			} while (op!=8);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
