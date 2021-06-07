@@ -39,12 +39,12 @@ public class Main4 {
                 maxuser = next.getNom();
             }
         }
-        System.out.println("\nContraseña más ancha: "+maxcontrasena+" de usuario: "+maxuser);
+        System.out.println("\nContrasena mas ancha: "+maxcontrasena+" de usuario: "+maxuser);
         //c) Mostrar a los usuarios que solo tienen números en sus contraseñas
         for (Usuario usuario : usuarios) {
             if(usuario.getContrasena().getClass().getSimpleName().equals("Integer")){
-                System.out.println("\nUsuario con contraseña numerica: "+usuario.getNom()
-                +" contraseña: "+usuario.getContrasena());
+                System.out.println("\nUsuario con contrasena numerica: "+usuario.getNom()
+                +" contrasena: "+usuario.getContrasena());
             }
         }
         //d) Mostrar a los usuarios que tienen su nombre en su contraseña

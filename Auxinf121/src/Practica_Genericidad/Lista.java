@@ -42,3 +42,5 @@ public class Lista <T>{
         return this.nroElementos;
     }
 }
+
+

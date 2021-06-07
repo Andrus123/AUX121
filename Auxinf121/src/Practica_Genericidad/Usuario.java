@@ -29,7 +29,7 @@ public class Usuario <T>{
     public void mostrar(){
         System.out.println("Codigo: "+getCod());
         System.out.println("Nombre: "+getNom());
-        System.out.println("Contraseña: "+getContrasena());
+        System.out.println("Contrasena: "+getContrasena());
     }
     
     public String getCod() {
