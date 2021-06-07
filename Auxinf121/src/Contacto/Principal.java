@@ -54,9 +54,13 @@ public class Principal {
 					archcontacts.Mostrar(z);
 					break;
 				case 6:
-					System.out.println("Ingrese el telefono: ");
+					System.out.println("Ingrese el telefono a eliminar: ");
 					int t = Leer.datoInt();
-					archcontacts.Eliminar(t);
+					if(archcontacts.Eliminar(t))
+						System.out.println("\n Contacto Eliminado");
+					else
+						System.out.println("\n Contacto no eliminado");
+					break;
 				default:
 					break;
 				}

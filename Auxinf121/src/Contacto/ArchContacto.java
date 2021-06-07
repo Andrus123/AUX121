@@ -108,28 +108,33 @@ public class ArchContacto implements Serializable{
 			aContacto.close();
 		}
     }
-    public Contacto Eliminar(int x) throws ClassNotFoundException, IOException{
+    public boolean Eliminar(int x) throws ClassNotFoundException, IOException{
+    	boolean sw = false;
     	ObjectInputStream aContacto = null;
+    	ObjectOutputStream archAux = null;
     	
     	try {
 			aContacto = new ObjectInputStream(new FileInputStream(nomArch));
+			archAux = new ObjectOutputStream(new FileOutputStream("copia.dat", true));
 			while(true) {
 				contacto = new Contacto();
 				contacto = (Contacto)aContacto.readObject();
-				if(contacto.getTelefono()==x) {
-					System.out.println("\nContacto Encontrado para eliminar: ");
-					contacto.mostrar();
-					contacto = null;
-					System.out.println("Contacto Eliminado");
-				}
+				if(contacto.getTelefono()==x)
+					sw = true;
+				else
+					archAux.writeObject(contacto);
 			}
-			
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Fin de Listado");
+			System.out.println("\n Fin eliminar");
 		}finally {
 			aContacto.close();
+			archAux.close();
+			File f1 = new File(nomArch);
+			File f2 = new File("copia.dat");
+			f1.delete();
+			f2.renameTo(f1);
 		}
-		return contacto;
+		return sw;
     }
 }
