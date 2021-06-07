@@ -37,7 +37,12 @@ public class Principal {
 					archmedico.mostrarMedicosdosespecs();
 					break;
 				case 6:
-					archmedico.eliminar();
+					System.out.println("Ingrese codigo medico a eliminar: ");
+					String cod = Leer.dato();
+					if(archmedico.eliminar(cod))
+						System.out.println("\n codigo medico eliminado");
+					else
+						System.out.println("\n codigo medico no eliminado");
 					break;
 				default:
 					break;

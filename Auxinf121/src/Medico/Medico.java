@@ -33,7 +33,7 @@ public class Medico implements Serializable{
 		}
 	}
 	public void mostrar() {
-		System.out.println("Nombre: "+getNombre());
+		System.out.println("\nNombre: "+getNombre());
 		System.out.println("Codigo Médico: "+getCodMedico());
 		System.out.println("N° de especialidades: "+getNroEspecialidad());
 		System.out.println("Especialidades: ");

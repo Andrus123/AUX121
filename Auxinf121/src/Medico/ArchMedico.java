@@ -97,24 +97,34 @@ public class ArchMedico implements Serializable{
 			aMedico.close();
 		}
 	}
-	public void eliminar() throws ClassNotFoundException, IOException{
-		System.out.println("Ingrese codigo medico a eliminar: ");
-		String x = Leer.dato();
+	public boolean eliminar(String cod) throws ClassNotFoundException, IOException{
+		boolean sw = false;
 		ObjectInputStream aMedico = null;
+		ObjectOutputStream archAux = null;
+		
 		try {
 			aMedico = new ObjectInputStream(new FileInputStream(na));
+			archAux = new ObjectOutputStream(new FileOutputStream("copia.dat",true));
 			while (true) {
 				medico = new Medico();
 				medico = (Medico)aMedico.readObject();
-				if(medico.getCodMedico().equals(x)) {
-					medico = null;
-				}
+				if(medico.getCodMedico().equals(cod)) 
+					sw = true;
+				else
+					archAux.writeObject(medico);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println("\n Fin eliminar");
 		}finally {
 			aMedico.close();
+			archAux.close();
+			File f1 = new File(na);
+			File f2 = new File("copia.dat");
+			f1.delete();
+			f2.renameTo(f1);
 		}
+		return sw;
 	}
 }
 
